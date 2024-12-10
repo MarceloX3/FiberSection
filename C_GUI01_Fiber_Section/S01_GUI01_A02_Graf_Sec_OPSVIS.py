@@ -8,7 +8,7 @@ COMENTARIOS:    Grafica seccion usando el codigo de OPSVIS adaptado para GUI
                 Además se añade funcion para graficar video de seccion.
 """
 
-# %% TODO:[00] LIBRERIAS
+# %% [00] LIBRERIAS
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Polygon, Wedge, Patch
@@ -16,7 +16,7 @@ import shutil
 import os
 
 
-# %% TODO:[01] FUNCIONES
+# %% [01] FUNCIONES
 # plot_fiber_section is inspired by plotSection matlab function
 # written by D. Vamvatsikos available at
 # http://users.ntua.gr/divamva/software.html (plotSection.zip)
