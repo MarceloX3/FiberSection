@@ -96,7 +96,7 @@ Un archivo `.bat` (batch) es un script ejecutable en sistemas Windows que permit
    - Guarda el archivo con la extensión `.bat` (por ejemplo, `IniciarNotebook.bat`).
 
 3. **Asociar el archivo `.bat` con archivos `.ipynb`:**
-   - Haz clic derecho sobre el archivo `S01_GUI02_uniaxialMaterial.ipynb` y selecciona "Propiedades".
+   - Haz clic derecho sobre el archivo `S01_GUI_Fiber_Section.ipynb` y selecciona "Propiedades".
    - En "Abrir con", selecciona el archivo `.bat` creado.
    - Esto permitirá abrir el entorno y ejecutar el archivo automáticamente al hacer doble clic.
 
