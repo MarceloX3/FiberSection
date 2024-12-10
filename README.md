@@ -49,7 +49,7 @@ cd ruta/a/tu/proyecto
 ```
 9. Instalar dependencias
 ```bash
-pip install -r requirements.txt
+conda install --file requirements.txt
 ```
 
 ## PARTE 3: Ejecución
