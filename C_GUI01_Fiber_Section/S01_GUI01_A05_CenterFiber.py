@@ -8,7 +8,7 @@ COMENTARIOS:    Grafica seccion usando el codigo de OPSVIS adaptado para GUI
                 Además se añade funcion para graficar video de seccion.
 """
 
-# %% TODO:[00] LIBRERIAS
+# %% [00] LIBRERIAS
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Polygon, Wedge
@@ -16,7 +16,7 @@ import shutil
 import os
 
 
-# %% TODO:[01] FUNCIONES
+# %% [01] FUNCIONES
 # plot_fiber_section is inspired by plotSection matlab function
 # written by D. Vamvatsikos available at
 # http://users.ntua.gr/divamva/software.html (plotSection.zip)
@@ -217,7 +217,7 @@ def plot_center_fiber_section(fib_sec_list, xlabel_x, ylabel_x, color_PM="r", fi
     return center_fiber_patch, center_fiber_straight, center_fiber_circle, center_fiber_wedge
 
 
-# %% TODO: [02] SUPPORT FUNCTIONS
+# %%  [02] SUPPORT FUNCTIONS
 # Function to calculate the center of the polygon
 def find_polygon_center(coords):
     """
@@ -268,7 +268,7 @@ def wedge_center(wedge):
     return x_center, y_center
 
 
-# %% TODO: [02] TEST
+# %%  [02] TEST
 
 if __name__ == '__main__':
 
