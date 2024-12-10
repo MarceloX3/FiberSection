@@ -6,13 +6,13 @@ SCRIPT:         S01_GUI01_A03_Video.py
 COMENTARIOS:    Genera video a partir de fotogramas.
 """
 
-# %% TODO: [00] LIBRERIAS
+# %%  [00] LIBRERIAS
 import os
 import imageio.v2 as imageio  # Usa imageio.v2 para evitar el aviso de deprecación
 import glob
 
 
-# %% TODO: [01] FUNCIONES
+# %%  [01] FUNCIONES
 def video(carpeta_foto, URL_video, FPS):
     """
     Genera un video a partir de una secuencia de imágenes.
