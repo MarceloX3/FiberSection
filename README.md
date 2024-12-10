@@ -1,7 +1,7 @@
 # FiberSection
 Herramienta GUI que permite al usuario visualizar la definición de secciones en base a fibras en OpenSees python. El código está inspirado en los trabajos realizados por: 
-	- Código Matlab `plotSection.zip` escrito por D. Vamvatsikos disponible en  [http://users.ntua.gr/divamva/software.html](http://users.ntua.gr/divamva/software.html)
-	- Librería Opsvis escrito por Seweryn Kokot disponible en [https://opsvis.readthedocs.io/en/latest/](https://opsvis.readthedocs.io/en/latest/)
+- Código Matlab `plotSection.zip` escrito por D. Vamvatsikos disponible en  [http://users.ntua.gr/divamva/software.html](http://users.ntua.gr/divamva/software.html)
+- Librería Opsvis escrito por Seweryn Kokot disponible en [https://opsvis.readthedocs.io/en/latest/](https://opsvis.readthedocs.io/en/latest/)
 
 ## Patch
 ![Patch](assets/01.gif)
