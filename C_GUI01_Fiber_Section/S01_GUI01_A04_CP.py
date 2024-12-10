@@ -32,11 +32,11 @@ COMENTARIOS:    Recibe una seccion, y la redibuja disponiendo su centro en el CP
 #         Coord. System easy to work with        Coord. System necessary for MC
 
 
-# %% TODO: [01] LIBRERIAS
+# %%  [01] LIBRERIAS
 import numpy as np
 
 
-# %% TODO: [02] FUNCIONES
+# %%  [02] FUNCIONES
 # Function to calculate the centroid of a quadrilateral patch
 # This function was created to plot the center of the quadrilateral patch
 # See S01_GUI01_A05_CenterFiber.py
