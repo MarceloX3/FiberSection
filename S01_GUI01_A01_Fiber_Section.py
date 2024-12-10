@@ -7,22 +7,13 @@ COMENTARIOS:    Interfaz gráfica de usuario para definicion de sección en base
                 a los requerimientos de libreria OPSVIS.
 """
 
-# %% TODO: [00] INTRODUCTION
+# %% [00] INTRODUCTION
 # GUI in Jupyter Notebook that generate the section of a fiber element in OpenSeespy. 
 
-# Note that you can run this file directly, only when it is placed in the directory of the .ipynb file.
-# The file S01_GUI01_A01_Fiber_Section.py is the main file to run the GUI.
-# When you run this file from the directory with the .ipynb files or from the directory C_GUI01_Fiber_Section, you need
-# to modify the import of the libraries in the section [01] LIBRARIES. See comments in that sections. You can only run
-# this file directly from the IDE (spyder) when this file is located in the directory with .ipynb.
-# Run this file directly allow you to see the error of the console in the IDE.
-
-# In jupyter notebook you need to use the following commands to run the file:
 # (.ipynb):                         %run S01_GUI01_A01_Fiber_Section.py
-# (C_GUI01_Fiber_Section):          %run C_GUI01_Fiber_Section\S01_GUI01_A01_Fiber_Section.py
 
 
-# %% TODO: [01] LIBRARIES
+# %% [01] LIBRARIES
 import matplotlib.pyplot as plt
 import ipywidgets as widgets
 from ipywidgets import HBox, VBox, Dropdown, IntText, Textarea, Output, Text
@@ -31,21 +22,14 @@ import os
 import shutil
 import math
 
-# Choose only one of the following options to run the GUI.
-run_from_directory_C_GUI01_Fiber_Section = False
-run_from_directory_with_ipynb = True
-if run_from_directory_C_GUI01_Fiber_Section:
-    pass
-if run_from_directory_with_ipynb:
-    import sys
-    sys.path.insert(0, './C_GUI01_Fiber_Section')
-    
+import sys
+sys.path.insert(0, './C_GUI01_Fiber_Section')
 import S01_GUI01_A02_Graf_Sec_OPSVIS as opsv1
 import S01_GUI01_A03_Video as vid
 import S01_GUI01_A04_CP as CP
 import S01_GUI01_A05_CenterFiber as CF
 
-# %% TODO: [02] INITIALIZATION
+# %% [02] INITIALIZATION
 # Create directories for the GUI in case it doesn't exist.
 def create_directory(path):
     try:
@@ -64,9 +48,9 @@ for dir_i in directories:
     create_directory(dir_i)
 
 
-# %% TODO: [03] FUNCTIONS
+# %% [03] FUNCTIONS
 
-# %%% TODO: [03-00] UPDATE DROPDOWNS
+# %%% [03-00] UPDATE DROPDOWNS
 # Function to update the type dropdown based on element type
 def update_patch_layer_type_options(change):
     if element_type_dropdown.value == 'patch':
@@ -128,7 +112,7 @@ def update_edit_patch_layer_options(change):
         edit_patch_layer_dropdown.value = '-'
 
 
-# %%% TODO: [03-01] INPUT DATA
+# %%% [03-01] INPUT DATA
 # Function to update input widgets layout based on patch or layer type
 def update_input_widgets(change=None):
     element_type = element_type_dropdown.value
@@ -194,9 +178,9 @@ def update_input_widgets(change=None):
         model_widgets.children = new_widgets
 
 
-# %%% TODO: [03-02] BUTTONS
+# %%% [03-02] BUTTONS
 
-# %%%% TODO: [03-02-00] ADD_SECTION_DEFINITION
+# %%%% [03-02-00] ADD_SECTION_DEFINITION
 # Function to add a new section definition and delete actual section and image.
 def add_section_definition(change=None):
     if add_section_button.description == 'Add Section':
@@ -286,7 +270,7 @@ def add_section_definition(change=None):
         model_widgets.children = []
 
 
-# %%%% TODO: [03-02-01] ADD_PATCH_LAYER
+# %%%% [03-02-01] ADD_PATCH_LAYER
 # Function auxiliar to add patch or layer definition
 def aux_add_patch_layer(change=None):
     # Save the patch or layer definition
@@ -456,7 +440,7 @@ def add_patch_layer(change=None):
         
 
 
-# %%%% TODO: [03-02-02] SHOW_SECTION
+# %%%% [03-02-02] SHOW_SECTION
 # Function to show the section created
 def show_section(change=None):
     try:
@@ -510,7 +494,7 @@ def show_section(change=None):
     code_params_output.value = "Section created successfully"
 
 
-# %%%% TODO: [03-02-02] SHOW_SECTION_UPDATE
+# %%%% [03-02-02] SHOW_SECTION_UPDATE
 # Function to show the section with the new patch or layer
 def show_section_update(change=None):
     # Obtain the actual section
@@ -533,7 +517,7 @@ def show_section_update(change=None):
     section_params_output.value = params_string
 
 
-# %%%% TODO: [03-02-02] SHOW_MATERIAL_SECTION
+# %%%% [03-02-02] SHOW_MATERIAL_SECTION
 # Function to show the material in the section
 def show_material_section(change=None):
     try:
@@ -587,7 +571,7 @@ def show_material_section(change=None):
     code_params_output.value = "Section created successfully"
 
 
-# %%%% TODO: [03-02-03] EDIT_PATCH_LAYER
+# %%%% [03-02-03] EDIT_PATCH_LAYER
 # Function to edit patch or layer definition
 def edit_patch_layer(change=None):
     # If the button is in the 'Edit' state, the function will select a patch or layer to edit
@@ -801,7 +785,7 @@ def edit_patch_layer(change=None):
         update_input_widgets()
 
 
-# %%%% TODO: [03-02-03] CANCEL_PATCH_LAYER
+# %%%% [03-02-03] CANCEL_PATCH_LAYER
 # Function to cancel patch or layer definition
 def cancel_patch_layer(change=None):
     # If the button is in the 'Delete' state, the function will cancel the patch or layer definition.
@@ -991,7 +975,7 @@ def cancel_patch_layer(change=None):
         code_params_output.value = "Edit the patch or layer parameters"
         
 
-# %%%% TODO: [03-02-03] REPLICATE
+# %%%% [03-02-03] REPLICATE
 # Function to save the replicate definition
 def save_replicate(change=None):
     # Copy the value in the cover parameters output into the section parameters output
@@ -1422,7 +1406,7 @@ def replicate(change=None):
     fiber_section_replicate()
 
 
-# %%%% TODO: [03-02-03] COVER
+# %%%% [03-02-03] COVER 
 # Function to save the cover definition
 def save_cover(change=None):
     # Copy the value in the cover parameters output into the section parameters output
@@ -1916,7 +1900,7 @@ def Cover(change=None):
     fiber_section_cover()
 
 
-# %%%% TODO: [03-02-03] SHOW_VIDEO
+# %%%% [03-02-03] SHOW_VIDEO
 # Function to show video of the section
 def show_video(change=None):
     try:
@@ -2033,7 +2017,7 @@ def show_video(change=None):
         code_params_output.value = "Video created successfully"
 
 
-# %%%% TODO: [03-02-03] SHOW_CODE
+# %%%% [03-02-03] SHOW_CODE
 # Function to update code for section
 def show_code(change=None):
     try:
@@ -2103,7 +2087,7 @@ opsv.fib_sec_list_to_cmds(section_CP)"""
     code_params_output.value = template
 
 
-# %%%% TODO: [03-02-04] DEFINE_MATERIAL
+# %%%% [03-02-04] DEFINE_MATERIAL
 # Function to define material strength
 def define_material(change=None):
     if material_button.description == 'Strength':
@@ -2184,7 +2168,7 @@ def define_material(change=None):
         code_params_output.value = "Material strength saved successfully"
 
 
-# %%%% TODO: [03-02-05] CALCULATE_CP
+# %%%% [03-02-05] CALCULATE_CP
 # Function to calculate the plastic centroid
 def call_calculate_cp(fib_sec, materials):
     adjusted_fib_sec = CP.Seccion_CP(fib_sec, materials)
@@ -2260,7 +2244,7 @@ def calculate_CP(change=None):
 {cp_section_string}"""
 
 
-# %%%% TODO: [03-02-06] SHOW_INSTRUCTIONS
+# %%%% [03-02-06] SHOW_INSTRUCTIONS
 # Function to show instructions
 def show_instructions(change=None):
     code_params_output.value = """Instructions:
@@ -2285,7 +2269,7 @@ N.10.- 'Center' also create a .txt file with the center of the fiber section.
 """
 
 
-# %%%% TODO: [03-02-07] SHOW_CENTER_SECTION
+# %%%% [03-02-07] SHOW_CENTER_SECTION
 # Function to show the center fiber section
 def show_center_section(change=None):
     try:
@@ -2349,13 +2333,13 @@ def show_center_section(change=None):
 Center of the fiber section saved in the file 'Center_Fiber_Section.txt'"""
 
 
-# %% TODO: [04] WIDGETS
+# %% [04] WIDGETS
 # Dimension para ingresar datos numericos.
 layout_var_1 = widgets.Layout(width='195px')
 layout_var = widgets.Layout(width='185px')
 layout_var_2 = widgets.Layout(width='175px')
 
-# %%% TODO: [04-00] Dropdown
+# %%% [04-00] Dropdown
 # Interactive widget to choose Patch or Layer
 element_type_dropdown = Dropdown(
     options=['patch', 'layer'],
@@ -2419,7 +2403,7 @@ fiber_plot_dropdown = Dropdown(
 )
 
 
-# %%% TODO: [04-01] Text - IntText
+# %%% [04-01] Text - IntText
 # Interactive widgets for section parameters
 secTag_input = IntText(value=1, description='secTag:', layout=layout_var_1)
 GJ_input = Text(value='1000000', description='GJ:', continuous_update=False, layout=layout_var_1)
@@ -2500,13 +2484,13 @@ dis_z = Text(value='0.0', description='dis_z:', continuous_update=False, layout=
 
 
 
-# %%% TODO: [04-02] ZIP WDGT
+# %%% [04-02] ZIP WDGT
 # Define a VBox to zip widgets associated with the parameters of the Patch/Layer/Material strength
 model_widgets = VBox(layout=widgets.Layout(width='215px', height='395px', padding='5px'))
 # Define a VBox to zip widgets associated with the parameters of the section and patch/layer
 section_widgets = VBox(layout=widgets.Layout(width='215px', padding='5px'))
 
-# %%% TODO: [04-03] OBSERVE DROPDOWNS
+# %%% [04-03] OBSERVE DROPDOWNS
 # Observe changes in the dropdowns and modify the options in related widgets
 element_type_dropdown.observe(update_patch_layer_type_options, names='value')
 patch_layer_type_dropdown.observe(update_input_widgets, names='value')
@@ -2514,7 +2498,7 @@ graphic_unit_dropdown.observe(update_unit_options, names='value')
 unit_dropdown.observe(update_input_widgets, names='value')
 
 
-# %%% TODO: [04-05] BUTTONS
+# %%% [04-05] BUTTONS
 
 # ADD SECTION
 # Button to add section.
@@ -2622,7 +2606,7 @@ instructions_button_layout = widgets.Layout(width='197px', margin='0 0 9px 0')
 instructions_button = widgets.Button(description='Show Instructions', layout=instructions_button_layout)
 instructions_button.on_click(show_instructions)
 
-# %%% TODO: [04-06] TEXTAREA
+# %%% [04-06] TEXTAREA
 # Display section parameters
 section_params_output = Textarea(value='', layout=widgets.Layout(width='427px', height='237px'))
 # Display code parameter
@@ -2633,13 +2617,13 @@ cover_params_output = Textarea(value='', disabled=True, layout=widgets.Layout(wi
 replicate_params_output = Textarea(value='', disabled=True, layout=widgets.Layout(width='195px', height='205px'))
 
 
-# %%% TODO: [04-07] OUTPUT
+# %%% [04-07] OUTPUT
 # Output widget to contain the plot
 layout_rigth = widgets.Layout(width='630px', height='806px')
 out = Output(layout=layout_rigth)  # Output
 
 
-# %%% TODO: [04-08] MATH IN WIDGETS & DYNAMIC GRAPHICS
+# %%% [04-08] MATH IN WIDGETS & DYNAMIC GRAPHICS
 # Widgets in the GUI
 widgets_list = [
     GJ_input, y1_input, z1_input, y2_input, z2_input,
@@ -2897,7 +2881,7 @@ for dropdown in dropdowns_visualization:
     observe_dropdown_zoom(dropdown)
 
 
-# %%% TODO: [04-09] OBSERVE DROPDOWN EDIT PATCH/LAYER
+# %%% [04-09] OBSERVE DROPDOWN EDIT PATCH/LAYER
 # Observe changes in the textareas and modify the options in related widgets
 section_params_output.observe(update_edit_patch_layer_options, names='value')
 
@@ -2974,10 +2958,10 @@ def update_patch_layer_image(change):
 # to show the patch or layer selected
 edit_patch_layer_dropdown.observe(update_patch_layer_image, names='value')
 
-# %% TODO: [05] LAYOUT
+# %% [05] LAYOUT
 # Layout of the interface
 
-# %%% TODO: [05-00] TEXT
+# %%% [05-00] TEXT
 title = widgets.HTML(value="<b>Fiber Section - Openseespy</b>",
                      layout=widgets.Layout(width='285px', display="flex", justify_content="center",
                                            margin="0px 0px 9px 0px"))
@@ -2999,7 +2983,7 @@ text_patch_layer.style.font_size = '14px'
 text_edit_fiber_section = widgets.HTML(value="Edit Patch/Layer in Fiber Section:", layout=widgets.Layout(margin="9px 0 0 2px"))
 text_edit_fiber_section.style.font_size = '14px'
 
-# %%% TODO: [05-01] INTERFACE
+# %%% [05-01] INTERFACE
 button_box_1 = HBox([add_patch_layer_button, cancel_patch_layer_button, edit_patch_layer_button])
 button_box_2 = HBox([text_section_pc, material_button, CP_button])
 section_inputs_list = [instructions_button, text_section, graphic_unit_dropdown, secTag_input, GJ_input,
@@ -3020,31 +3004,33 @@ interface = HBox([left_side, right_side])
 interface2 = VBox([interface, text2, code_params_output, text3])
 display(interface2)
 
-# %% TODO: [06] DEVELOPER
+# %% [06] DEVELOPER 
 # Layout programer
-# import inspect
-# programer_output = Textarea(value='', layout=widgets.Layout(width='1072px', height='380px'))  # 
-# display(programer_output)
+aux_programmer_view = False
+if aux_programmer_view:
+    import inspect
+    programer_output = Textarea(value='', layout=widgets.Layout(width='1072px', height='380px'))  # 
+    display(programer_output)
 
-# # # Function to display in GUI variable in certain line of code
-# def GUI_info(Text_in_string, line_of_code,  variable):
-#     """
-#     Function to display in GUI certain line of code
-#     :param Text_in_string: Variable in string
-#     :param line_of_code: Line of code
-#     :param variable: Variable to display
-#     :return: None
-    
-#     Calling using:
-#     current_line = inspect.currentframe().f_lineno
-#     GUI_info('load_args = ', current_line, load_args)
-#     """
-#     template_message = f"""
-# Line of Code: {line_of_code}
-# {Text_in_string}
-# """
-#     template_close_message = f"""
-# --------------------------------------------
-# """
-#     programer_output.value = programer_output.value + template_message + str(variable) + template_close_message
+    # # Function to display in GUI variable in certain line of code
+    def GUI_info(Text_in_string, line_of_code,  variable):
+        """
+        Function to display in GUI certain line of code
+        :param Text_in_string: Variable in string
+        :param line_of_code: Line of code
+        :param variable: Variable to display
+        :return: None
+        
+        Calling using:
+        current_line = inspect.currentframe().f_lineno
+        GUI_info('load_args = ', current_line, load_args)
+        """
+        template_message = f"""
+    Line of Code: {line_of_code}
+    {Text_in_string}
+    """
+        template_close_message = f"""
+    --------------------------------------------
+    """
+        programer_output.value = programer_output.value + template_message + str(variable) + template_close_message
 
