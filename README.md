@@ -4,19 +4,19 @@ Herramienta GUI que permite al usuario visualizar la definición de secciones en
 	- Librería Opsvis escrito por Seweryn Kokot disponible en [https://opsvis.readthedocs.io/en/latest/](https://opsvis.readthedocs.io/en/latest/)
 
 ## Patch
-[Patch](01.gif)
+![Patch](assets/01.gif)
 ## Cover
-![Cover](02.gif)
+![Cover](assets/02.gif)
 ## Layer
-![Layer](03.gif)
+![Layer](assets/03.gif)
 ## Replicate
-![Replicate](04.gif)
+![Replicate](assets/04.gif)
 ## Centroide Plástico
-![CP](05.gif)
+![CP](assets/05.gif)
 ## Center - Video
-![Center - Video](06.gif)
+![Center - Video](assets/06.gif)
 ## Código
-![Código](07.gif)
+![Código](assets/07.gif)
 
 # INSTALACIÓN
 
