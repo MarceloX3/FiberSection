@@ -57,7 +57,7 @@ conda install --file requirements.txt
 ### OPCIÓN A (Para principiantes): Ejecución manual
 1. Abre Anaconda Prompt
 2. Activa el entorno: `conda activate env_FiberSection`
-3. 3.Inicia Jupyter Lab: `jupyter lab`
+3. Inicia Jupyter Lab: `jupyter lab`
 4. Abre el archivo `.ipynb`
 5. Ejecuta
 
