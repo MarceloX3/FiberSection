@@ -35,21 +35,21 @@ git clone https://github.com/MarceloX3/FiberSection
 
 ## PARTE 2: Configuración del Entorno
 5. Abrir Anaconda Prompt
-6. Crear entorno virtual
-```bash
-conda create -n env_FiberSection python=3.11
-```
-7. Activar entorno
-```bash
-conda activate env_FiberSection
-```
-8. Navegar a carpeta del proyecto
+6. Navegar a carpeta del proyecto
 ```bash
 cd ruta/a/tu/proyecto
 ```
-9. Instalar dependencias
+7. Crear entorno virtual conda
 ```bash
-conda install --file requirements.txt
+conda create --name env_FiberSection --file environment_conda.txt
+```
+8. Activar entorno
+```bash
+conda activate env_FiberSection
+```
+9. Instalar dependencias pip
+```bash
+pip install -r requirements_pip.txt
 ```
 
 ## PARTE 3: Ejecución
@@ -57,8 +57,8 @@ conda install --file requirements.txt
 ### OPCIÓN A (Para principiantes): Ejecución manual
 1. Abre Anaconda Prompt
 2. Activa el entorno: `conda activate env_FiberSection`
-3. Inicia Jupyter Lab: `jupyter lab`
-4. Abre el archivo `.ipynb`
+3. Inicia Jupyter Notebook: `jupyter notebook`
+4. Abre el archivo `S01_GUI_Fiber_Section.ipynb`
 5. Ejecuta
 
 ### OPCIÓN B (Para usuarios con conocimientos técnicos): Ejecución desde un acceso directo
@@ -74,23 +74,23 @@ Un archivo `.bat` (batch) es un script ejecutable en sistemas Windows que permit
      import sys
      print(sys.executable)
      ```
-   - Copia el resultado, que es la ruta del entorno donde se ejecuta Jupyter. (Ejemplo: _C:\Users\USUARIO\anaconda3\envs\env_ChartMander1988_)
+   - Copia el resultado, que es la ruta del entorno donde se ejecuta Jupyter. (Ejemplo: _C:\Users\USUARIO\anaconda3\envs\env_FiberSection_)
 
 2. **Crear el archivo `.bat`:**
    - Abre un editor de texto.
    - Copia y pega el siguiente código, reemplazando `RUTA_DEL_ENTORNO` con la ruta obtenida en el paso anterior:
      ```batch
      @echo off
-     
+
      REM Configurar la ruta del entorno virtual
      set ANACONDAPATH=RUTA_DEL_ENTORNO
-     
+
      REM Configurar variables del entorno
      start %ANACONDAPATH%\python.exe %ANACONDAPATH%\cwp.py %ANACONDAPATH% ^
-     
-     REM Abrir el archivo .ipynb especificado con Jupyter Lab
-     start %ANACONDAPATH%\python.exe -m jupyter lab %1
-     
+
+     REM Abrir el archivo .ipynb especificado
+     start %ANACONDAPATH%\python.exe %ANACONDAPATH%\Scripts\jupyter-notebook.exe %1
+
      exit
      ```
    - Guarda el archivo con la extensión `.bat` (por ejemplo, `IniciarNotebook.bat`).
@@ -105,4 +105,4 @@ Un archivo `.bat` (batch) es un script ejecutable en sistemas Windows que permit
    - Mueve el acceso directo a un lugar conveniente.
    - Personaliza el icono haciendo clic derecho en el acceso directo, seleccionando "Propiedades" > "Cambiar icono" y eligiendo un archivo `.ico` característico.
 
-Este método proporciona una forma práctica y rápida de iniciar el proyecto sin necesidad de abrir manualmente el entorno o Jupyter Lab.
+Este método proporciona una forma práctica y rápida de iniciar el proyecto sin necesidad de abrir manualmente el entorno o Jupyter Notebook.
